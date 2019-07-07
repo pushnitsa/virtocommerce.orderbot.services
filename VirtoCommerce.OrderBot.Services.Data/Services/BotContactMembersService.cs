@@ -31,7 +31,7 @@ namespace VirtoCommerce.OrderBot.Services.Data.Services
                 )
             {
                 var predicate = PredicateBuilder.False<MemberDataEntity>();
-                predicate.Or(c => c is BotContactEntity && ((BotContactEntity) c).BotUserName == botContactSearchCriteria.BotUserName);
+                predicate = predicate.Or(c => c is BotContactEntity && (c as BotContactEntity).BotUserName == botContactSearchCriteria.BotUserName);
 
                 retVal = LinqKit.Extensions.Expand(predicate);
             }
