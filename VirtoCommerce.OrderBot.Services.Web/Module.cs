@@ -1,11 +1,15 @@
 ﻿using Microsoft.Practices.Unity;
+using VirtoCommerce.OrderBot.Services.Data.Repositories;
+using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.Modularity;
+using VirtoCommerce.Platform.Data.Infrastructure;
+using VirtoCommerce.Platform.Data.Infrastructure.Interceptors;
 
 namespace VirtoCommerce.OrderBot.Services.Web
 {
     public class Module : ModuleBase
     {
-        // private readonly string _connectionString = ConfigurationHelper.GetConnectionStringValue("VirtoCommerce.OrderBot.Services") ?? ConfigurationHelper.GetConnectionStringValue("VirtoCommerce");
+        private readonly string _connectionString = ConfigurationHelper.GetConnectionStringValue("VirtoCommerce.OrderBot.Services") ?? ConfigurationHelper.GetConnectionStringValue("VirtoCommerce");
         private readonly IUnityContainer _container;
 
         public Module(IUnityContainer container)
@@ -15,12 +19,13 @@ namespace VirtoCommerce.OrderBot.Services.Web
 
         public override void SetupDatabase()
         {
-            // Modify database schema with EF migrations
-            // using (var context = new MyRepository(_connectionString)))
-            // {
-            //     var initializer = new SetupDatabaseInitializer<MyRepository, Data.Migrations.Configuration>();
-            //     initializer.InitializeDatabase(context);
-            // }
+            base.SetupDatabase();
+
+            using (var db = new BotContactRepository(_connectionString, _container.Resolve<AuditableInterceptor>()))
+            {
+                var initializer = new SetupDatabaseInitializer<BotContactRepository, Data.Migrations.Configuration>();
+                initializer.InitializeDatabase(db);
+            }
         }
 
         public override void Initialize()

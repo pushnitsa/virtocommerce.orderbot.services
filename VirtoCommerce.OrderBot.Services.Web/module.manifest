@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<module>
+    <id>VirtoCommerce.OrderBot.Services</id>
+    <version>1.0.0</version>
+    <platformVersion>2.13.44</platformVersion>
+    <dependencies>
+        <dependency id="VirtoCommerce.Core" version="2.25.21" />
+        <dependency id="VirtoCommerce.Customer" version="2.14.21" />
+    </dependencies>
+
+    <title>VirtoCommerce.OrderBot.Services</title>
+    <description>Enter your module description here.</description>
+    <authors>
+        <author>VirtoCommerce Solutions</author>
+    </authors>
+
+    <releaseNotes>First version.</releaseNotes>
+    <copyright>Copyright © 2019 . All rights reserved</copyright>
+    <tags>extension module</tags>
+  
+    <assemblyFile>VirtoCommerce.OrderBot.Services.Web.dll</assemblyFile>
+    <moduleType>VirtoCommerce.OrderBot.Services.Web.Module, VirtoCommerce.OrderBot.Services.Web</moduleType>
+
+    <styles>
+        <directory virtualPath="$/Content/css" searchPattern="*.css" searchSubdirectories="true" />
+    </styles>
+    <scripts>
+        <directory virtualPath="$/Scripts" searchPattern="*.js" searchSubdirectories="true" />
+    </scripts>
+</module>

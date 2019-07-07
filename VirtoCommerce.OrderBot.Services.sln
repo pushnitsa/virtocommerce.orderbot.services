@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Web", "VirtoCommerce.OrderBot.Services\VirtoCommerce.OrderBot.Services.Web\VirtoCommerce.OrderBot.Services.Web.csproj", "{F2C64419-9474-415C-BE4A-BB43DD7BC005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Web", "VirtoCommerce.OrderBot.Services.Web\VirtoCommerce.OrderBot.Services.Web.csproj", "{F2C64419-9474-415C-BE4A-BB43DD7BC005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Core", "VirtoCommerce.OrderBot.Services\VirtoCommerce.OrderBot.Services.Core\VirtoCommerce.OrderBot.Services.Core.csproj", "{94E9CA55-E4C9-48B2-8209-62C64BE65307}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Core", "VirtoCommerce.OrderBot.Services.Core\VirtoCommerce.OrderBot.Services.Core.csproj", "{94E9CA55-E4C9-48B2-8209-62C64BE65307}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Data", "VirtoCommerce.OrderBot.Services\VirtoCommerce.OrderBot.Services.Data\VirtoCommerce.OrderBot.Services.Data.csproj", "{5AA0DFD7-CEED-4143-8F10-1096184CA4E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Data", "VirtoCommerce.OrderBot.Services.Data\VirtoCommerce.OrderBot.Services.Data.csproj", "{5AA0DFD7-CEED-4143-8F10-1096184CA4E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Tests", "VirtoCommerce.OrderBot.Services\VirtoCommerce.OrderBot.Services.Tests\VirtoCommerce.OrderBot.Services.Tests.csproj", "{8BB84119-6C70-4A71-83CC-13B3542E4875}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.OrderBot.Services.Tests", "VirtoCommerce.OrderBot.Services.Tests\VirtoCommerce.OrderBot.Services.Tests.csproj", "{8BB84119-6C70-4A71-83CC-13B3542E4875}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
