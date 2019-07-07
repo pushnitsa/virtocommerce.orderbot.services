@@ -12,8 +12,11 @@ namespace VirtoCommerce.OrderBot.Services.Data.Models
         {
             base.Patch(target);
 
-            var botContactEntity = (BotContactEntity)target;
-            botContactEntity.BotUserName = BotUserName;
+            if (target is BotContactEntity botContactEntity)
+            {
+                botContactEntity.BotUserName = BotUserName;
+            }
+
         }
     }
 }
