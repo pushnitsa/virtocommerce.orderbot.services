@@ -21,9 +21,6 @@
     <assemblyFile>VirtoCommerce.OrderBot.Services.Web.dll</assemblyFile>
     <moduleType>VirtoCommerce.OrderBot.Services.Web.Module, VirtoCommerce.OrderBot.Services.Web</moduleType>
 
-    <styles>
-        <directory virtualPath="$/Content/css" searchPattern="*.css" searchSubdirectories="true" />
-    </styles>
     <scripts>
         <directory virtualPath="$/Scripts" searchPattern="*.js" searchSubdirectories="true" />
     </scripts>
