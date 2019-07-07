@@ -13,7 +13,7 @@ namespace VirtoCommerce.OrderBot.Services.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201907071439331_AddBotUserName"; }
+            get { return "201907072000062_AddBotUserName"; }
         }
         
         string IMigrationMetadata.Source

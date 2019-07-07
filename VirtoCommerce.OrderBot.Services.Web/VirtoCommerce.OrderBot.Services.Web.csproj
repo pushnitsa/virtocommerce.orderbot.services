@@ -135,10 +135,6 @@
   <ItemGroup>
     <None Include="module.ignore" />
     <None Include="packages.config" />
-    <None Include="Content\help\index.html" />
-    <None Include="Content\help\stylesheet.css" />
-    <None Include="Content\help\sample.png" />
-    <None Include="Content\help\arch_scheme.png" />
     <None Include="app.config" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
@@ -150,17 +146,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="module.manifest" />
-    <Content Include="Content\css\virto-commerce.order-bot.services.css" />
-    <Content Include="Scripts\blades\hello-world.js" />
-    <Content Include="Scripts\blades\hello-world.html" />
     <Content Include="Scripts\module.js" />
-    <Content Include="Scripts\resources\virto-commerce.order-bot.services-api.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Controllers\Api\VirtoCommerceOrderBotServicesController.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

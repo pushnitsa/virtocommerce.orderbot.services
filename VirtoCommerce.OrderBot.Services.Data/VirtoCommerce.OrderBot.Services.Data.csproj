@@ -86,17 +86,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201907071439331_AddBotUserName.cs" />
-    <Compile Include="Migrations\201907071439331_AddBotUserName.Designer.cs">
-      <DependentUpon>201907071439331_AddBotUserName.cs</DependentUpon>
+    <Compile Include="Migrations\201907072000062_AddBotUserName.cs" />
+    <Compile Include="Migrations\201907072000062_AddBotUserName.Designer.cs">
+      <DependentUpon>201907072000062_AddBotUserName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BotContactEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BotContactRepository.cs" />
+    <Compile Include="Services\BotContactMembersService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <EmbeddedResource Include="Migrations\201907072000062_AddBotUserName.resx">
+      <DependentUpon>201907072000062_AddBotUserName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VirtoCommerce.OrderBot.Services.Core\VirtoCommerce.OrderBot.Services.Core.csproj">
@@ -106,11 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907071439331_AddBotUserName.resx">
-      <DependentUpon>201907071439331_AddBotUserName.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

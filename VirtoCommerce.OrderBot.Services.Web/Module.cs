@@ -1,5 +1,13 @@
 ﻿using Microsoft.Practices.Unity;
+using System;
+using VirtoCommerce.CustomerModule.Data.Model;
+using VirtoCommerce.CustomerModule.Data.Repositories;
+using VirtoCommerce.CustomerModule.Data.Services;
+using VirtoCommerce.Domain.Customer.Model;
+using VirtoCommerce.OrderBot.Services.Core.Models;
+using VirtoCommerce.OrderBot.Services.Data.Models;
 using VirtoCommerce.OrderBot.Services.Data.Repositories;
+using VirtoCommerce.OrderBot.Services.Data.Services;
 using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.Modularity;
 using VirtoCommerce.Platform.Data.Infrastructure;
@@ -32,28 +40,21 @@ namespace VirtoCommerce.OrderBot.Services.Web
         {
             base.Initialize();
 
-            // This method is called for each installed module on the first stage of initialization.
+            BotContactRepository BotContactRepository() => new BotContactRepository(_connectionString, _container.Resolve<AuditableInterceptor>(), new EntityPrimaryKeyGeneratorInterceptor());
 
-            // Register implementations:
-            // _container.RegisterType<IMyRepository>(new InjectionFactory(c => new MyRepository(_connectionString, new EntityPrimaryKeyGeneratorInterceptor()));
-            // _container.RegisterType<IMyService, MyService>();
+            _container.RegisterInstance<Func<ICustomerRepository>>(BotContactRepository);
+            _container.RegisterInstance<Func<IMemberRepository>>(BotContactRepository);
 
-            // Try to avoid calling _container.Resolve<>();
+            _container.RegisterType<CommerceMembersServiceImpl, BotContactMembersService>();
         }
 
         public override void PostInitialize()
         {
             base.PostInitialize();
 
-            // This method is called for each installed module on the second stage of initialization.
-
-            // Override types using AbstractTypeFactory:
-            // AbstractTypeFactory<BaseModel>.OverrideType<BaseModel, BaseModelEx>();
-            // AbstractTypeFactory<BaseModelEntity>.OverrideType<BaseModelEntity, BaseModelExEntity>();
-
-            // Resolve registered implementations:
-            // var settingManager = _container.Resolve<ISettingsManager>();
-            // var value = settingManager.GetValue("Pricing.ExportImport.Description", string.Empty);
+            AbstractTypeFactory<Member>.OverrideType<Contact, BotContact>().MapToType<BotContactEntity>();
+            AbstractTypeFactory<MemberDataEntity>.OverrideType<ContactDataEntity, BotContactEntity>();
+            AbstractTypeFactory<MembersSearchCriteria>.OverrideType<MembersSearchCriteria, BotContactSearchCriteria>();
         }
     }
 }

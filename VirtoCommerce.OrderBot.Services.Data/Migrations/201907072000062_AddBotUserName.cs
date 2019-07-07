@@ -15,14 +15,14 @@ namespace VirtoCommerce.OrderBot.Services.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Contact", t => t.Id)
-                .Index(t => t.Id)
-                .Index(t => t.BotUserName, unique: true);
+                .Index(t => t.Id);
+
+            Sql("INSERT INTO dbo.BotContact (Id) SELECT Id FROM dbo.Contact");
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.BotContact", "Id", "dbo.Contact");
-            DropIndex("dbo.BotContact", new[] { "BotUserName" });
             DropIndex("dbo.BotContact", new[] { "Id" });
             DropTable("dbo.BotContact");
         }

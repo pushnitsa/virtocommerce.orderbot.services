@@ -23,7 +23,6 @@ namespace VirtoCommerce.OrderBot.Services.Data.Repositories
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<BotContactEntity>().ToTable("BotContact").HasKey(x => x.Id).Property(x => x.Id);
-            modelBuilder.Entity<BotContactEntity>().HasIndex(i => i.BotUserName).IsUnique(true);
         }
 
     }
